@@ -1,0 +1,1 @@
+rootProject.name = "example-html5-landingpage-buddah"
