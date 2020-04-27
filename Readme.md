@@ -1,6 +1,8 @@
 # example-html5-landingpage-buddah
+[![build status](https://github.com/Tait1337/example-html5-landingpage-buddah/workflows/build/badge.svg)](https://github.com/Tait1337/example-html5-landingpage-buddah/actions)
 [![quality gate status](https://sonarcloud.io/api/project_badges/measure?project=Tait1337_example-html5-landingpage-buddah&metric=alert_status)](https://sonarcloud.io/dashboard?id=Tait1337_example-html5-landingpage-buddah)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](LICENSE)
+[![uses kotlin](https://img.shields.io/badge/kotlin-1.3-blue.svg)](http://kotlinlang.org)
 
 Http4k based Kotlin example Web Application with multiple build options (AdoptOpenJDK, GraalVM, Project Loom).
 
@@ -91,25 +93,25 @@ java -jar /target/system/path/example-html5-landingpage-buddah-1.0.0-SNAPSHOT-al
 
 In addition to that you can build the Application as one of three possible Dockerimage variants.
 
+### Built and run as Dockerimage with GraalVM native
+
+```
+./docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT .
+docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
+```
+
 ### Built and run as Dockerimage with AdoptOpenJDK
 
 ```
 ./docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-openjdk/Dockerfile .
-docker run -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
-```
-
-### Built and run as Dockerimage with GraalVM native
-
-```
-./docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-graal/Dockerfile .
-docker run -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
+docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
 ```
 
 ### Built and run as Dockerimage with Project Loom
 
 ```
 ./docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-loom/Dockerfile .
-docker run -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
+docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
 ```
 
 ## Contributing
@@ -138,4 +140,4 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 * AdoptOpenJDK Team for providing a free JDK
 * findepi for providing the GraalVM builder image for docker
 * RichyHBM for guidance with building GraalVM native images
-* Photographer of Sample Photos from Pexels
+* Photographer of sample photos from Pexels
