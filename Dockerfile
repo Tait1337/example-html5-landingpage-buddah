@@ -24,10 +24,12 @@ RUN native-image \
 # The actual image to run
 #####
 FROM alpine:3.9
+LABEL maintainer="tait1337"
 RUN apk --no-cache add ca-certificates
 
 # App
 WORKDIR /app
+COPY ./src/main/resources/static/album ./static/album
 COPY --from=builder /builder/app .
 EXPOSE $PORT
 ENTRYPOINT ["./app"]
