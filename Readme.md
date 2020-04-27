@@ -1,4 +1,6 @@
 # example-html5-landingpage-buddah
+[![quality gate status](https://sonarcloud.io/api/project_badges/measure?project=Tait1337_example-html5-landingpage-buddah&metric=alert_status)](https://sonarcloud.io/dashboard?id=Tait1337_example-html5-landingpage-buddah)
+[![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](LICENSE)
 
 Http4k based Kotlin example Web Application with multiple build options (AdoptOpenJDK, GraalVM, Project Loom).
 
@@ -126,7 +128,7 @@ We use [GitHub](https://github.com/) for versioning. For the versions available,
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
