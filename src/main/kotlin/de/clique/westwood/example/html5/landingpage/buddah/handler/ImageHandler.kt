@@ -2,25 +2,25 @@ package de.clique.westwood.example.html5.landingpage.buddah.handler
 
 import de.clique.westwood.example.html5.landingpage.buddah.config.STATIC_FILES_BASEDIR
 import de.clique.westwood.example.html5.landingpage.buddah.entity.Album
-import org.http4k.core.*
-import org.http4k.format.Jackson.auto
+import kotlinx.serialization.builtins.list
+import kotlinx.serialization.builtins.serializer
+import kotlinx.serialization.json.Json
+import org.http4k.core.HttpHandler
+import org.http4k.core.Response
+import org.http4k.core.Status
 import org.http4k.lens.Path
 import org.http4k.lens.string
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.attribute.BasicFileAttributes
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.*
 import kotlin.streams.toList
 
-
 val albumHandler: HttpHandler = { _ ->
-    val albumListLens = Body.auto<List<Album>>().toLens()
-    Response(Status.OK).with(
-            albumListLens of getAllAlbums()
-    )
+    Response(Status.OK).body(Json.stringify(Album.serializer().list, getAllAlbums()))
 }
 
 private fun getAllAlbums(): List<Album> {
@@ -31,7 +31,7 @@ private fun getAllAlbums(): List<Album> {
                 Album(
                         it.name,
                         it.name.replace("_", " "),
-                        LocalDateTime.ofInstant(
+                        OffsetDateTime.ofInstant(
                                 Files.readAttributes(it.toPath(), BasicFileAttributes::class.java).creationTime().toInstant(),
                                 ZoneId.systemDefault()
                         ), getOneRandomImage(it.name))
@@ -46,11 +46,8 @@ private fun getOneRandomImage(albumId: String): String {
 }
 
 val imageHandler: HttpHandler = { req ->
-    val imageListLens = Body.auto<List<String>>().toLens()
     val albumId = Path.string().of("albumId").extract(req)
-    Response(Status.OK).with(
-            imageListLens of getAllImages(albumId)
-    )
+    Response(Status.OK).body(Json.stringify(String.serializer().list, getAllImages(albumId)))
 }
 
 private fun getAllImages(albumId: String): List<String> {
