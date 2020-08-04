@@ -18,15 +18,15 @@ application {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlinx","kotlinx-serialization-runtime","0.20.0")
-    implementation("org.http4k", "http4k-core", "3.243.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-server-apache", "3.243.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-client-okhttp", "3.243.0") // Apache License 2.0
-    implementation("org.http4k","http4k-format-kotlinx-serialization","3.243.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-core", "3.254.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-server-apache", "3.254.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-client-okhttp", "3.254.0") // Apache License 2.0
+    implementation("org.http4k","http4k-format-kotlinx-serialization","3.254.0") // Apache License 2.0
     implementation("com.natpryce", "konfig", "1.6.10.0") // Apache License 2.0
-    implementation("io.github.microutils", "kotlin-logging", "1.7.9") // Apache License 2.0
-    implementation("org.slf4j", "slf4j-simple", "1.7.29") // MIT License
+    implementation("io.github.microutils", "kotlin-logging", "1.8.3") // Apache License 2.0
+    implementation("org.slf4j", "slf4j-simple", "1.7.30") // MIT License
 
-    testImplementation("org.junit.jupiter", "junit-jupiter", "5.6.1")
+    testImplementation("org.junit.jupiter", "junit-jupiter", "5.6.2")
 }
 
 tasks.compileKotlin {
