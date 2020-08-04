@@ -28,6 +28,7 @@ class ImageHandlerTest {
 
         assertEquals(actual.status, expectedResponse.status)
         assertEquals(actualResponse.size, 2)
+        println(actualResponse[1])
         assertEquals(actualResponse[1].id, "Zen_Garden")
         assertEquals(actualResponse[1].title, "Zen Garden")
     }
