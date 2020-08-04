@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: 1.8
       - run: chmod +x gradlew
-      - run: ./gradlew build --debug
+      - run: ./gradlew build
       - uses: akhileshns/heroku-deploy@v3.0.4 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}

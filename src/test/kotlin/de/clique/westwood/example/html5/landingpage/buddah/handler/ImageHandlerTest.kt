@@ -8,6 +8,7 @@ import org.http4k.core.Request
 import org.http4k.core.Response
 import org.http4k.core.Status.Companion.OK
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
 
 class ImageHandlerTest {
@@ -28,8 +29,12 @@ class ImageHandlerTest {
 
         assertEquals(actual.status, expectedResponse.status)
         assertEquals(actualResponse.size, 2)
-        println(actualResponse[1])
-        assertEquals(actualResponse[1].id, "Zen_Garden")
-        assertEquals(actualResponse[1].title, "Zen Garden")
+        for (album in actualResponse) {
+            assertNotNull(album.id)
+            assertNotNull(album.title)
+            if (album.id == "Zen_Garden"){
+                assertEquals(album.title, "Zen Garden")
+            }
+        }
     }
 }
