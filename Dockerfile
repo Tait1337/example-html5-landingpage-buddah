@@ -9,7 +9,7 @@
 #####
 # The builder image to build the native app
 #####
-FROM findepi/graalvm:native as builder
+FROM findepi/graalvm:java11-native as builder
 LABEL stage=builder
 
 WORKDIR /builder
