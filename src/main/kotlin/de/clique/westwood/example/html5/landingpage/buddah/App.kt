@@ -14,10 +14,9 @@ import org.http4k.server.asServer
 
 private val LOGGER = KotlinLogging.logger {}
 
-
 val app: HttpHandler = loggerFilter
         .then(loggerFilter)
-        .then(BasicAuth(Regex("^(/album|/gallery).*"), "Passwortgeschützer Bereich", Credentials(GALLERY_USERNAME, GALLERY_PASSWORD)))
+        .then(BasicAuth(Regex("^(/album|/gallery).*"), "Password protected area", Credentials(GALLERY_USERNAME, GALLERY_PASSWORD)))
         .then(ServerFilters.ReplaceResponseContentsWithStaticFile.invoke(ResourceLoader.Classpath("/static")))
         .then(routing)
 
