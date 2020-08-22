@@ -14,10 +14,12 @@ LABEL stage=builder
 
 WORKDIR /builder
 COPY ./build/libs/example-html5-landingpage-buddah-1.0.0-SNAPSHOT-all.jar ./app.jar
+COPY graal-reflection-configuration.json ./graal-reflection-configuration.json
 RUN native-image \
     --no-fallback \
     --static \
     -H:IncludeResources="(.*.properties)|(static/.*)|(META-INF/.*)" \
+    -H:ReflectionConfigurationFiles=graal-reflection-configuration.json \
     -jar app.jar
 
 #####

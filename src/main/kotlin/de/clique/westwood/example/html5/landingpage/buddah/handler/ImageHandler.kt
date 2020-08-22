@@ -16,7 +16,7 @@ import java.nio.file.Paths
 import java.nio.file.attribute.BasicFileAttributes
 import java.time.OffsetDateTime
 import java.time.ZoneId
-import java.util.*
+import kotlin.random.Random
 import kotlin.streams.toList
 
 val albumHandler: HttpHandler = { _ ->
@@ -41,7 +41,7 @@ private fun getAllAlbums(): List<Album> {
 
 private fun getOneRandomImage(albumId: String): String {
     val allImages = getAllImages(albumId)
-    val rndInt = Random().nextInt(allImages.size)
+    val rndInt = Random.nextInt(allImages.size)
     return allImages[rndInt]
 }
 
