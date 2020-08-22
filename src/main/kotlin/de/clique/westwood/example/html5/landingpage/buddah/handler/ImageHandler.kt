@@ -2,7 +2,7 @@ package de.clique.westwood.example.html5.landingpage.buddah.handler
 
 import de.clique.westwood.example.html5.landingpage.buddah.config.STATIC_FILES_BASEDIR
 import de.clique.westwood.example.html5.landingpage.buddah.entity.Album
-import kotlinx.serialization.builtins.list
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.json.Json
 import org.http4k.core.HttpHandler
@@ -20,7 +20,7 @@ import kotlin.random.Random
 import kotlin.streams.toList
 
 val albumHandler: HttpHandler = { _ ->
-    Response(Status.OK).body(Json.stringify(Album.serializer().list, getAllAlbums()))
+    Response(Status.OK).body(Json.encodeToString(ListSerializer(Album.serializer()), getAllAlbums()))
 }
 
 private fun getAllAlbums(): List<Album> {
@@ -47,7 +47,7 @@ private fun getOneRandomImage(albumId: String): String {
 
 val imageHandler: HttpHandler = { req ->
     val albumId = Path.string().of("albumId").extract(req)
-    Response(Status.OK).body(Json.stringify(String.serializer().list, getAllImages(albumId)))
+    Response(Status.OK).body(Json.encodeToString(ListSerializer(String.serializer()), getAllImages(albumId)))
 }
 
 private fun getAllImages(albumId: String): List<String> {

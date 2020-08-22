@@ -1,7 +1,7 @@
 package de.clique.westwood.example.html5.landingpage.buddah.handler
 
 import de.clique.westwood.example.html5.landingpage.buddah.entity.Album
-import kotlinx.serialization.builtins.list
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import org.http4k.core.Method
 import org.http4k.core.Request
@@ -25,14 +25,14 @@ class ImageHandlerTest {
         val expectedResponse = Response(OK).body(sampleResponse)
 
         val actual = handle(input)
-        val actualResponse = Json.parse(Album.serializer().list, actual.bodyString())
+        val actualResponse = Json.decodeFromString(ListSerializer(Album.serializer()), actual.bodyString())
 
         assertEquals(actual.status, expectedResponse.status)
         assertEquals(actualResponse.size, 2)
         for (album in actualResponse) {
             assertNotNull(album.id)
             assertNotNull(album.title)
-            if (album.id == "Zen_Garden"){
+            if (album.id == "Zen_Garden") {
                 assertEquals(album.title, "Zen Garden")
             }
         }
