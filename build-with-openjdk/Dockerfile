@@ -1,10 +1,10 @@
 ############################################################################
-# Adopt Open JDK 14 Build (203 MB)
+# Adopt Open JDK 15 Build (239 MB)
 #
 # build from project root dir with: docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-openjdk/Dockerfile .
 # run with: docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
 ############################################################################
-FROM adoptopenjdk/openjdk14:alpine-jre
+FROM adoptopenjdk/openjdk15:alpine-jre
 LABEL maintainer="tait1337"
 
 # App

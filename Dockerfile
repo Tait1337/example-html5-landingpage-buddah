@@ -1,5 +1,5 @@
 ############################################################################
-# Graal Native Image Early-Access Build (40,3 MB)
+# Graal Native Image Early-Access Build (67,8 MB)
 #
 # Make sure you configured Docker to use at least 6gb ram!
 # build from project root dir with: docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT .

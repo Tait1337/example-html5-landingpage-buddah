@@ -2,7 +2,7 @@
 [![build status](https://github.com/Tait1337/example-html5-landingpage-buddah/workflows/build/badge.svg)](https://github.com/Tait1337/example-html5-landingpage-buddah/actions)
 [![quality gate status](https://sonarcloud.io/api/project_badges/measure?project=Tait1337_example-html5-landingpage-buddah&metric=alert_status)](https://sonarcloud.io/dashboard?id=Tait1337_example-html5-landingpage-buddah)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](LICENSE)
-[![uses kotlin](https://img.shields.io/badge/kotlin-1.3-blue.svg)](http://kotlinlang.org)
+[![uses kotlin](https://img.shields.io/badge/kotlin-1.4-blue.svg)](http://kotlinlang.org)
 
 Http4k based Kotlin example Web Application with multiple build options (AdoptOpenJDK, GraalVM, Project Loom).
 
@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install Java JDK 8 or higher.
+Install Java JDK 11 or higher.
 ```
 https://openjdk.java.net/install/index.html
 ```
@@ -134,10 +134,10 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## Acknowledgments
 
-* JetBrains Team for providing kotlin the statically typed fresh java-based language
-* http4k Team for providing such an amazing HTTP toolkit
-* GraalVM Team for providing a way to build native java apps
-* AdoptOpenJDK Team for providing a free JDK
-* findepi for providing the GraalVM builder image for docker
-* RichyHBM for guidance with building GraalVM native images
-* Photographer of sample photos from Pexels
+* JetBrains Team for providing [Kotlin](https://kotlinlang.org/) the statically typed fresh java-based language
+* [http4k](https://www.http4k.org/) Team for providing such an amazing HTTP toolkit
+* [GraalVM](https://www.graalvm.org/) Team for providing a way to build native java apps
+* [AdoptOpenJDK](https://adoptopenjdk.net/) Team for providing a free JDK
+* [findepi](https://github.com/findepi) for providing the GraalVM builder image for docker
+* [RichyHBM](https://github.com/RichyHBM) for guidance with building GraalVM native images
+* Photographer of sample photos from [Pexels](https://www.pexels.com/)
