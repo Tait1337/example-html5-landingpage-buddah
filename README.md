@@ -1,7 +1,7 @@
 # example-html5-landingpage-buddah
 [![build status](https://github.com/Tait1337/example-html5-landingpage-buddah/workflows/build/badge.svg)](https://github.com/Tait1337/example-html5-landingpage-buddah/actions)
 [![quality gate status](https://sonarcloud.io/api/project_badges/measure?project=Tait1337_example-html5-landingpage-buddah&metric=alert_status)](https://sonarcloud.io/dashboard?id=Tait1337_example-html5-landingpage-buddah)
-[![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](LICENSE)
+[![license](https://img.shields.io/github/license/Tait1337/example-html5-landingpage-buddah)](LICENSE)
 [![uses kotlin](https://img.shields.io/badge/kotlin-1.4-blue.svg)](http://kotlinlang.org)
 
 Http4k based Kotlin example Web Application with multiple build options (AdoptOpenJDK, GraalVM, Project Loom).
