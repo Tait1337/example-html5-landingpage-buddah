@@ -51,6 +51,8 @@ tasks.test {
 
 sonarqube {
     properties {
+        property("sonar.projectKey", "Tait1337_example-html5-landingpage-buddah")
+        property("sonar.organization", "tait1337")
         property("sonar.host.url", "https://sonarcloud.io")
     }
 }
