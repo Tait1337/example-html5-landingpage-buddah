@@ -3,6 +3,7 @@ plugins {
     kotlin("jvm") version "1.4.0"
     kotlin("plugin.serialization") version "1.4.0"
     id("com.github.johnrengelman.shadow") version "5.2.0"
+    id("org.sonarqube") version "3.0"
 }
 
 repositories {
@@ -45,5 +46,11 @@ tasks.test {
     useJUnitPlatform()
     testLogging {
         events("passed", "skipped", "failed")
+    }
+}
+
+sonarqube {
+    properties {
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
