@@ -1,5 +1,5 @@
 ############################################################################
-# Loom JDK 17 Early-Access Build (474 MB)
+# Loom JDK 17 Early-Access Build (455 MB)
 #
 # build from project root dir with: docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-loom/Dockerfile .
 # run with: docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
