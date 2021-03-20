@@ -1,10 +1,10 @@
 ############################################################################
-# Adopt Open JDK 15 Build (244 MB)
+# Adopt Open JDK 16 Build (224 MB)
 #
 # build from project root dir with: docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT -f build-with-openjdk/Dockerfile .
 # run with: docker run --env-file .env -p 8080:8080 -d example-html5-landingpage-buddah:1.0.0-SNAPSHOT
 ############################################################################
-FROM adoptopenjdk/openjdk15:x86_64-alpine-jre-15_36
+FROM adoptopenjdk/openjdk16:x86_64-alpine-jre-16_36
 LABEL maintainer="tait1337"
 
 # App

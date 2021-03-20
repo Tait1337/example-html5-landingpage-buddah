@@ -9,7 +9,7 @@ LABEL maintainer="tait1337"
 
 # Install Loom EA Build https://jdk.java.net/loom/
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-RUN curl https://download.java.net/java/early_access/loom/2/openjdk-17-loom+2-42_linux-x64_bin.tar.gz | tar xz -C /
+RUN curl https://download.java.net/java/early_access/loom/4/openjdk-17-loom+4-174_linux-x64_bin.tar.gz | tar xz -C /
 ENV JAVA_HOME /jdk-17
 ENV PATH $JAVA_HOME/bin:$PATH
 

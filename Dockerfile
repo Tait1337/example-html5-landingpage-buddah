@@ -1,5 +1,5 @@
 ############################################################################
-# Graal Native Image Early-Access Build (67,8 MB)
+# Graal Native Image Early-Access Build (68,1 MB)
 #
 # Make sure you configured Docker to use at least 6gb ram!
 # build from project root dir with: docker build -t example-html5-landingpage-buddah:1.0.0-SNAPSHOT .
@@ -25,7 +25,7 @@ RUN native-image \
 #####
 # The actual image to run
 #####
-FROM alpine:3.9
+FROM alpine:3.13
 LABEL maintainer="tait1337"
 RUN apk --no-cache add ca-certificates
 

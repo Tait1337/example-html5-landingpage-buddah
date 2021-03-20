@@ -1,9 +1,9 @@
 plugins {
     application
-    kotlin("jvm") version "1.4.0"
-    kotlin("plugin.serialization") version "1.4.0"
-    id("com.github.johnrengelman.shadow") version "5.2.0"
-    id("org.sonarqube") version "3.0"
+    kotlin("jvm") version "1.4.31"
+    kotlin("plugin.serialization") version "1.4.31"
+    id("com.github.johnrengelman.shadow") version "6.1.0"
+    id("org.sonarqube") version "3.1.1"
 }
 
 repositories {
@@ -18,15 +18,15 @@ application {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.jetbrains.kotlinx","kotlinx-serialization-core","1.0.0-RC")
-    implementation("org.http4k", "http4k-core", "3.258.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-server-apache", "3.258.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-client-okhttp", "3.258.0") // Apache License 2.0
+    implementation("org.jetbrains.kotlinx","kotlinx-serialization-json","1.1.0")
+    implementation("org.http4k", "http4k-core", "4.4.2.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-server-apache", "4.4.2.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-client-okhttp", "4.4.2.0") // Apache License 2.0
     implementation("com.natpryce", "konfig", "1.6.10.0") // Apache License 2.0
-    implementation("io.github.microutils", "kotlin-logging", "1.8.3") // Apache License 2.0
+    implementation("io.github.microutils", "kotlin-logging", "2.0.6") // Apache License 2.0
     implementation("org.slf4j", "slf4j-simple", "1.7.30") // MIT License
 
-    testImplementation("org.junit.jupiter", "junit-jupiter", "5.6.2")
+    testImplementation("org.junit.jupiter", "junit-jupiter", "5.7.1")
 }
 
 tasks.compileKotlin {

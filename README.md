@@ -29,17 +29,12 @@ Clone the Repository.
 git clone https://github.com/tait1337/example-html5-landingpage-buddah.git
 ```
 
-Build the Web Application with Gradle.
-```
-./gradlew build
-```
-
 Run the Web Application.
 ```
-java -jar ./build/libs/example-html5-landingpage-buddah-1.0.0-SNAPSHOT-all.jar
+./gradlew run
 ```
 
-Navigate to http://localhost:8080/Index.html.
+Navigate to http://localhost:8080.
 
 ![Main Page](screenshot_index.png)
 
