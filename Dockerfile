@@ -33,4 +33,5 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /app
 COPY ./src/main/resources/static/album ./static/album
 COPY --from=builder /builder/app .
-CMD [ "sh", "-c", "java -jar ./app --bind 0.0.0.0:$PORT" ]
+EXPOSE $PORT
+CMD [ "sh", "-c", "./app --bind 0.0.0.0:$PORT" ]
