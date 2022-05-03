@@ -17,7 +17,6 @@ import java.nio.file.attribute.BasicFileAttributes
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import kotlin.random.Random
-import kotlin.streams.toList
 
 val albumHandler: HttpHandler = { _ ->
     Response(Status.OK).body(Json.encodeToString(ListSerializer(Album.serializer()), getAllAlbums()))
