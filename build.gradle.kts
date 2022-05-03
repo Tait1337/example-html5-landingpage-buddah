@@ -1,9 +1,9 @@
 plugins {
     application
-    kotlin("jvm") version "1.4.31"
-    kotlin("plugin.serialization") version "1.4.31"
-    id("com.github.johnrengelman.shadow") version "6.1.0"
-    id("org.sonarqube") version "3.1.1"
+    kotlin("jvm") version "1.6.21"
+    kotlin("plugin.serialization") version "1.6.21"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("org.sonarqube") version "3.3"
 }
 
 repositories {
@@ -11,33 +11,33 @@ repositories {
 }
 
 application {
-    mainClassName = "de.clique.westwood.example.html5.landingpage.buddah.AppKt"
+    mainClass.set("de.clique.westwood.example.html5.landingpage.buddah.AppKt")
     group = "de.clique.westwood.example.html5.landingpage.buddah"
     version = "1.0.0-SNAPSHOT"
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.jetbrains.kotlinx","kotlinx-serialization-json","1.1.0")
-    implementation("org.http4k", "http4k-core", "4.4.2.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-server-apache", "4.4.2.0") // Apache License 2.0
-    implementation("org.http4k", "http4k-client-okhttp", "4.4.2.0") // Apache License 2.0
+    implementation("org.jetbrains.kotlinx","kotlinx-serialization-json","1.3.2")
+    implementation("org.http4k", "http4k-core", "4.25.13.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-server-apache", "4.25.13.0") // Apache License 2.0
+    implementation("org.http4k", "http4k-client-okhttp", "4.25.13.0") // Apache License 2.0
     implementation("com.natpryce", "konfig", "1.6.10.0") // Apache License 2.0
-    implementation("io.github.microutils", "kotlin-logging", "2.0.6") // Apache License 2.0
-    implementation("org.slf4j", "slf4j-simple", "1.7.30") // MIT License
+    implementation("io.github.microutils", "kotlin-logging", "2.1.21") // Apache License 2.0
+    implementation("org.slf4j", "slf4j-simple", "1.7.36") // MIT License
 
-    testImplementation("org.junit.jupiter", "junit-jupiter", "5.7.1")
+    testImplementation("org.junit.jupiter", "junit-jupiter", "5.8.2")
 }
 
 tasks.compileKotlin {
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
 tasks.shadowJar {
     manifest {
-        attributes("Main-Class" to application.mainClassName)
+        attributes("Main-Class" to application.mainClass)
     }
     mergeServiceFiles()
 }

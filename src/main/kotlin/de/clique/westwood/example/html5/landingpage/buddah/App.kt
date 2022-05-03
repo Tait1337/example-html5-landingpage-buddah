@@ -20,7 +20,7 @@ val app: HttpHandler = loggerFilter
         .then(ServerFilters.ReplaceResponseContentsWithStaticFile.invoke(ResourceLoader.Classpath("/static")))
         .then(routing)
 
-fun main(args: Array<String>) {
+fun main() {
     app.asServer(ApacheServer(PORT)).start()
     LOGGER.info { "Server started on port $PORT" }
     LOGGER.info { "Serving albums from $STATIC_FILES_BASEDIR" }
